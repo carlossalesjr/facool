@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main()
+{
+    int classe, lamp;
+    float larg, comp, metro2;
+    
+    printf("insira a classe do comodo: ");
+    scanf("%d", &classe);
+    printf("insira as dimensoes do comodo: comprimento e largura ");
+    scanf("%f %f", &comp, &larg);
+    
+    metro2=comp*larg;
+    lamp=0;
+    
+    if(classe==1)
+    lamp=metro2/5;
+    else if(classe==2)
+    lamp=metro2/4;
+    else if(classe==3)
+    lamp=metro2/3;
+    
+    if(classe==1 && lamp*60/metro2<12)
+    lamp++;
+    else if(classe==2 && lamp*60/metro2<15)
+    lamp++;
+    else if(classe==3 && lamp*60/metro2<20)
+    lamp++;
+    
+    printf("vais precisar de %d lampadas", lamp);
+}
