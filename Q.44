@@ -1,0 +1,16 @@
+/******************************************************************************
+44. Escreva um programa que imprima todos os números de 1 até 100, inclusive, e a soma 
+de todos eles.
+*******************************************************************************/
+#include <stdio.h>
+
+void main()
+{
+    int icont, soma=0;
+    
+    for (icont=1; icont<=100; icont++){
+        printf("%d\n", icont);
+        soma=soma+icont;
+    }
+    printf ("a soma é : %d", soma);
+}   
