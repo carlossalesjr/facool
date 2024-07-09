@@ -1,0 +1,22 @@
+/******************************************************************************
+51. A série de Fibonacci é formada pela sequencia: 
+• 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ... 
+Escreva um programa que gere a série de FIBONACCI até o N-ésimo termo (com N 
+sendo uma entrada do algoritmo)
+*******************************************************************************/
+#include <stdio.h>
+
+void main()
+{
+   int i, termoN, termoAnt=1, termoAntAnt=0, termoAtual;
+   
+   printf("insira uma posiçao para saber o termo: ");
+   scanf("%d", &termoN);
+   
+   for(i=0; i<termoN; i++){
+       termoAtual=termoAnt+termoAntAnt;
+       printf("%d\n", termoAtual);
+       termoAntAnt=termoAnt;
+       termoAnt=termoAtual;
+   }
+}
