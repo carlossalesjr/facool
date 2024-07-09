@@ -1,0 +1,22 @@
+/******************************************************************************
+62. Faça um programa em C que leia um array de 10 posições e conte quantos números pares 
+são elementos do array. Imprima esta quantidade.
+*******************************************************************************/
+#include <stdio.h>
+
+void main()
+{
+  int v[10];
+  int i, ipar=0;
+  
+  for(i=0; i<10; i++){
+  printf("insira um numero: ");
+  scanf("%d", &v[i]);
+  }
+  
+  for(i=0; i<10; i++){
+    if(v[i]%2==0){
+    ipar++;}
+  }
+  printf("%d\n", ipar);
+}
