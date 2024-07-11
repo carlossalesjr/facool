@@ -1,0 +1,28 @@
+/******************************************************************************
+Selection Sort
+*******************************************************************************/
+#include <stdio.h>
+#define Tamanho 5
+void main()
+{
+  int v[Tamanho];
+  int i, j, k, aux;
+  
+  for(i=0; i<Tamanho; i++){
+  printf("insira um numero: ");
+  scanf("%d", &v[i]);
+  }
+  
+  for (i=0; i<Tamanho-1; i++){
+  for (j=i+1; j<Tamanho; j++){
+      if (v[i]>v[j]){
+          aux=v[i];
+          v[i]=v[j];
+          v[j]=aux;
+        }
+    }
+  }
+  for(k=0; k<Tamanho; k++){
+  printf("%d ", v[k]);
+}
+}
