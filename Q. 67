@@ -1,0 +1,22 @@
+/******************************************************************************
+67. Faça um programa em C que leia dois vetores de 10 posições de inteiros e copie o maior 
+valor dos dois em cada posição em um terceiro vetor. Em seguida, imprima este terceiro 
+vetor
+*******************************************************************************/
+#include <stdio.h>
+#define TamVetor 5
+void main()
+{
+  int v[TamVetor] = {10, 40, 50, 80, 90}; 
+  int x[TamVetor] = {20, 30, 60, 70, 100};
+  int z[TamVetor];
+  int i;
+  
+  for (i=0; i<TamVetor; i++){
+      if (v[i] >= x[i])
+      z[i]=v[i];
+      else
+      z[i]=x[i];
+      printf("%d \n", z[i]);
+  }
+}
