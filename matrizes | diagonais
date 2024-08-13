@@ -1,0 +1,26 @@
+#include <stdio.h>
+#define dimensao 4
+void main()
+{
+    int matriz [dimensao] [dimensao] {{1, 2, 3, 4}, 
+                                      {1, 2, 3, 4}, 
+                                      {1, 2, 3, 4}, 
+                                      {1, 2, 3, 4}};
+    int icont, jcont;
+    int soma = 0, prod = 1;
+    
+    for (icont=0; icont<dimensao; icont++){
+        for (jcont=0; jcont<dimensao; jcont++){
+            if (icont == jcont)
+               soma += matriz [icont] [jcont];
+        }
+    }
+    for (icont=0; icont<dimensao; icont++){
+        for (jcont=0; jcont<dimensao; jcont++){
+            if (icont+jcont = dimensao - 1)
+               prod *= matriz [icont] [jcont];
+        }
+    }    
+    printf("a soma da diagonal principal eh %d ", soma);
+    printf("o produto da diagonal secundaria eh %d ", prod);
+}
