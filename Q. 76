@@ -1,0 +1,28 @@
+#include <stdio.h>
+#define tamanho 255
+
+void main()
+{
+    char str [tamanho];
+    int contvogal;
+    int icont;
+    int A = 65, E = 69, I = 73, O = 79, U = 85;
+    int tosmall = 32;
+    
+    puts ("insira uma frase legal:");
+    fgets(str, tamanho, stdin);
+    
+    for (icont=0; str[icont] != '\0'; icont++){
+        if (str[icont] == A || str[icont] == A + tosmall)
+        contvogal++;
+        else if (str[icont] == E || str[icont] == E + tosmall)
+        contvogal++;
+        else if (str[icont] == I || str[icont] == I + tosmall)
+        contvogal++;
+        else if (str[icont] == O || str[icont] == O + tosmall)
+        contvogal++;
+        else if (str[icont] == U || str[icont] == U + tosmall)
+        contvogal++;
+    }
+    printf ("%d vogais na frase", contvogal);
+}
