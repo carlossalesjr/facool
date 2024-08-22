@@ -2,10 +2,10 @@
 #define dimensao 4
 void main()
 {
-    int matriz [dimensao] [dimensao] {{1, 2, 3, 4}, 
-                                      {1, 2, 3, 4}, 
-                                      {1, 2, 3, 4}, 
-                                      {1, 2, 3, 4}};
+    int matriz [dimensao] [dimensao] = {{1, 2, 3, 4}, 
+                                       {1, 2, 3, 4}, 
+                                       {1, 2, 3, 4}, 
+                                       {1, 2, 3, 4}};
     int icont, jcont;
     int soma = 0, prod = 1;
     
@@ -17,7 +17,7 @@ void main()
     }
     for (icont=0; icont<dimensao; icont++){
         for (jcont=0; jcont<dimensao; jcont++){
-            if (icont+jcont = dimensao - 1)
+            if (icont+jcont == dimensao - 1)
                prod *= matriz [icont] [jcont];
         }
     }    
