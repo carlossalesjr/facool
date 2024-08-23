@@ -1,0 +1,39 @@
+/* 96. Escrever um algoritmo e implementá-lo em linguagem C que leia duas matrizes de 
+valores inteiros 3 por 4 e crie uma terceira matriz, que seja a soma das duas primeiras, e 
+uma quarta, que seja a diferença entre a primeira e a segunda. Mostrar as matrizes lidas e 
+calculadas. */
+
+#include <stdio.h>
+#define Qtde_Linhas 3
+#define Qtde_Colunas 4
+
+void main()
+{
+    int mtzA [Qtde_Linhas] [Qtde_Colunas] = {{1, 0, 2, 3}, {0, 3, 4, 1}, {1, 3, 2, 0}};
+    int mtzB [Qtde_Linhas] [Qtde_Colunas] = {{2, 1, 0, 0}, {1, 0, 2, 3}, {4, 0, 3, 1}};
+    int mtzSoma [Qtde_Linhas] [Qtde_Colunas];
+    int mtzSub [Qtde_Linhas] [Qtde_Colunas];
+    int icont, jcont, kcont;
+    int soma, sub;
+    
+    for (icont= 0; icont < Qtde_Linhas; icont++){
+        for (jcont = 0; jcont < Qtde_Colunas; jcont++){
+            mtzSoma [icont] [jcont] = mtzA [icont] [jcont] + mtzB [icont] [jcont];
+            mtzSub [icont] [jcont] = mtzA [icont] [jcont] - mtzB [icont] [jcont]; 
+        }
+    }
+    for (icont=0; icont<Qtde_Linhas; icont++){
+        for (jcont=0; jcont<Qtde_Colunas; jcont++){
+            printf(" %d ", mtzSoma [icont] [jcont]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+    
+    for (icont=0; icont<Qtde_Linhas; icont++){
+        for (jcont=0; jcont<Qtde_Colunas; jcont++){
+            printf(" %d ", mtzSub [icont] [jcont]);
+        }
+        printf("\n");
+    }
+}
