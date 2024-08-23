@@ -1,32 +1,35 @@
-/******************************************************************************
-
-                            Online C Compiler.
-                Code, Compile, Run and Debug C program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
+/* Questão II (5.0) - Palavras como “Belo”, “fiNo”, “CrUz” e “FLor” possuem a interessante propriedade 
+de que suas letras aparecem todas em ordem alfabética. Por exemplo, em “FLor”, F vem antes de L 
+no alfabeto, L vem antes de o, e o vem antes de r. Dizemos que palavras com essa propriedade são 
+ordenadas.
+Escreva um programa em C, que leia uma palavra e determine se ela é uma palavra ordenada */
 
 #include <stdio.h>
-#define altura 9
-#define largura 14
+#define TAM_STR 255
+#define TRUE 1
+#define FALSE 0
 
-int main()
+void main()
 {
-    char mtz [altura] [largura] = {{ '.', '.', '.', '.', '.', '.', '.', 'o', '.', '.', '.', '.', '.', '.' },
-                                   { '.', '#', '#', '#', '.', '.', '.', '#', '#', '#', '.', '#', '.', '#' },
-                                   { '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' },
-                                   { '.', '.', '#', '#', '#', '#', '#', '#', '.', '.', '.', '.', '.', '.' },
-                                   { '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' },
-                                   { '.', '#', '.', '#', '#', '#', '#', '.', '.', '.', '.', '#', '#', '.' },
-                                   {{ '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' },
-                                   { '.', '#', '#', '#', '.', '.', '.', '#', '#', '#', '.', '#', '.', '#' },
-                                   { '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' },
-    int i, j;
-    
-    for (i=0; i<altura; i++){
-        for (j=0; j<largura; j++){
-            if (mtz [i] [j] == '.' && mtz [i-1] [j] == 'o' || mtz [i] [j-1] == 'o' && mtz [i+1] [j-1] == '#' || mtz [i] [j+1] == 'o' && mtz [i+1] [j+1] == '#')
-            mtz [i] [j] = 'o';
+    char str [TAM_STR];
+    int verificador = 0;
+    int icont, jcont;
+
+    puts ("insira a palavra para saber se ela eh ordenada");
+    fgets(str, TAM_STR, stdin);
+
+    for (icont=0; str [icont] && str [icont] != '\n'; icont++){
+        if (str [icont] - 'A' >= 32){
+            str [icont] -= 32;
         }
     }
+    for (jcont = 0; str [jcont] && str [jcont] != '\n'; jcont++){
+        if (str [jcont] < str [jcont - 1])
+        verificador = TRUE;
+    }
+    if (verificador == FALSE)
+    puts ("eh palavra ordenada");
+    else 
+    puts ("nao eh ordenada ");
+
 }
