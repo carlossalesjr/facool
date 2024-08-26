@@ -1,0 +1,35 @@
+/*  Questão II – Valor (3,5)
+O agrupamento de duas ou mais consoantes, sem vogal intermediária, recebe o nome 
+de encontro consonantal.
+Escreva um programa em C, que leia uma string de até 256 caracteres, conte e imprima o 
+número de encontros consonantais identificados na string.
+Por exemplo, na string “O istmo de Stradun não fica no Brasil”. O programa deverá imprimir o 
+valor 3 */
+
+#include <stdio.h>
+#define TAM_STR 257
+
+void main()
+{
+    char str [TAM_STR];
+    int ECcont = 0;
+    int icont;
+
+    puts ("digita uma frase ai: ");
+    fgets(str, TAM_STR, stdin);
+    
+    for (icont=0; str[icont] && str[icont] != '\n'; icont++){
+        if (str [icont] - 'A' >= 32)
+        str [icont] -= 32;
+    }
+    for (icont=0; str[icont] && str[icont] != '\n'; icont++){
+        if (str[icont] != 'A' && str[icont] != 'E' && str[icont] != 'I' 
+            && str[icont] != 'O' && str[icont] != 'U' && str[icont] != ' '
+            && str[icont+1] != 'A' && str[icont+1] != 'E' && str[icont+1] != 'I' 
+            && str[icont+1] != 'O' && str[icont+1] != 'U' && str[icont+1] != ' ' && str[icont+1] != '\n'){
+            icont++;
+            ECcont++;
+        }
+    }
+    printf ("a frase tem %d encontro(s) consonantais :) ", ECcont);
+}
